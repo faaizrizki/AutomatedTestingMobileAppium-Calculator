@@ -15,13 +15,13 @@ public class Calculator {
 	}
 	
 	//Locator
-	By btnDua = By.id("com.google.android.calculator:id/digit_2");
-	By btnEmpat = By.id("com.google.android.calculator:id/digit_4");
-	By btnKurang = By.id("com.google.android.calculator:id/op_sub");
-	By btnKali = By.id("com.google.android.calculator:id/op_mul");
-	By btnBagi = By.id("com.google.android.calculator:id/op_div");
-	By btnSamaDengan = By.id("com.google.android.calculator:id/eq");
-	By hasil = By.id("com.google.android.calculator:id/result_final");
+	By btnDua = By.id("com.coloros.calculator:id/digit_2");
+	By btnEmpat = By.id("com.coloros.calculator:id/digit_4");
+	By btnKurang = By.id("com.coloros.calculator:id/op_sub");
+	By btnKali = By.id("com.coloros.calculator:id/op_mul");
+	By btnBagi = By.id("com.coloros.calculator:id/op_div");
+	By btnSamaDengan = By.id("com.coloros.calculator:id/eq");
+	By hasil = By.id("com.coloros.calculator:id/result");
 	
 	
 	//Method

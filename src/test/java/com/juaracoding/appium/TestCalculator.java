@@ -22,17 +22,19 @@ public class TestCalculator {
 	private Calculator calculator;
 	
 	@BeforeClass
-	public void setUp() throws MalformedURLException {
+	public void setUp() throws MalformedURLException{
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("deviceName", "RMX1911");
 		capabilities.setCapability("udid", "af68959d");
-		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+		capabilities.setCapability("platformName", "Android");
 		capabilities.setCapability("platformVersion", "10");
 		capabilities.setCapability("automationName", "UiAutomator2");
 		capabilities.setCapability("appPackage","com.coloros.calculator");
 		capabilities.setCapability("appActivity","com.android.calculator2.Calculator");
+		capabilities.setCapability("noReset", true);
+
 		
-		driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
+		driver = new AndroidDriver<MobileElement>(new URL("https://127.0.1.1:4723/wd/hub"), capabilities);
 	}
 	
 	@BeforeMethod
@@ -40,21 +42,21 @@ public class TestCalculator {
 		calculator = new Calculator(driver);
 	}
 	
-	@Test (priority = 1)
+	@Test
 	public void testKurang() {
 		calculator.calcKurang();
 		System.out.println("Hasil = "+calculator.getTxtResult());
 		assertEquals(calculator.getTxtResult(), "2");
 	}
 	
-	@Test (priority = 2)
+	@Test 
 	public void testKali() {
 		calculator.calcKali();
 		System.out.println("Hasil = "+calculator.getTxtResult());
 		assertEquals(calculator.getTxtResult(), "8");
 	}
 	
-	@Test (priority = 3)
+	@Test 
 	public void testBagi() {
 		calculator.calcBagi();
 		System.out.println("Hasil = "+calculator.getTxtResult());
